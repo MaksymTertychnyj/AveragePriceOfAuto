@@ -1,0 +1,63 @@
+<div>
+<div>
+    <label for="selectedTypeTransport">Type transport</label>
+    <select style="margin-left: 36px;" (change)="OnChangeTypeTransport()" [(ngModel)]="selectedTypeTransport">
+        <option *ngFor="let t of typeTransport" [value]="t.value">{{t.name}}</option>
+    </select>
+
+    <select style="margin-left: 15px;" (change)="OnChangeMarkTransport()" [(ngModel)]="selectedMark">
+        <option *ngFor="let m of markTransport" [value]="m.value">{{m.name}}</option>
+    </select>
+
+    <select style="margin-left: 15px;" [(ngModel)]="selectedModel">
+        <option *ngFor="let m of modelTransport" [value]="m.value">{{m.name}}</option>
+    </select>
+</div>
+<br>
+<div>
+    <label for="selectedRegion">Region</label>
+    <select style="margin-left: 89px;" (change)="OnChangeRegion()" [(ngModel)]="selectedRegion">
+        <option *ngFor="let r of region" [value]="r.value">{{r.name}}</option>
+    </select>
+
+    <select style="margin-left: 15px;" [(ngModel)]="selectedCity">
+        <option *ngFor="let c of city" [value]="c.value">{{c.name}}</option>
+    </select>
+</div>
+<br>
+<div>
+    <label for="selectedFuel">Fuel type</label>
+    <select style="margin-left: 75px;" [(ngModel)]="selectedFuel">
+        <option *ngFor="let f of fuelType" [value]="f.value">{{f.name}}</option>
+    </select>
+</div>
+<br>
+<div>
+    <label for="selectedKPP">KPP type</label>
+    <select style="margin-left: 77px;" [(ngModel)]="selectedKPP">
+        <option *ngFor="let k of KPPtype" [value]="k.value">{{k.name}}</option>
+    </select>
+</div>
+<br>
+<div>
+    <label for="selectedMinYear">year: from</label>
+    <select style="margin-left: 70px;" (change)="OnChangeMinYear()" [(ngModel)]="selectedMinYear">
+        <option *ngFor="let y of yearsFirst" [value]="y">{{y}}</option>
+    </select>
+
+    <label style="margin-left: 15px;" for="selectedMaxYear">to</label>
+    <select style="margin-left: 15px;" [(ngModel)]="selectedMaxYear">
+        <option *ngFor="let y of yearsSecond" [value]="y">{{y}}</option>
+    </select>
+</div>
+<br>
+<div>
+    <label for="selectedCarMileage">Mileage of car</label>
+    <select style="margin-left: 40px;" [(ngModel)]="selectedCarMileage">
+        <option *ngFor="let m of mileages" [value]="m">{{m}}</option>
+    </select>
+    <label>.  h. km</label>
+</div>
+<br>
+<button (click)="AveragePrice()">Average price</button>
+</div>

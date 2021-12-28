@@ -1,0 +1,33 @@
+<h2>This page show the result received from web service of Autoria</h2>
+
+
+
+    Total: {{response.total}}
+    <br>
+    Average price:{{response.arithmeticMean}}
+
+<br>
+<br>
+<div style="block-size: auto;">
+<div style="float: left;">
+    <select style="width: 100%; height: 100%;" size="20" [(ngModel)]="selectedPosition" (change)="OnChangeID()" multiple="multiple">
+            <option *ngFor="let val of response.classifieds; let i = index" [value]="val">
+                id: {{val}}; 
+                price: {{response.prices[i]}}
+            </option>
+    </select>
+
+</div>
+<div>
+    <img [src]="responseAdvertisement.photoData['seoLinkF']" alt="no image" style="width: 50%; height: 50%;">
+</div>
+</div>
+<br>
+<div style="float: left;">
+    <p>{{responseAdvertisement['title']}}</p>
+    <p>City: {{responseAdvertisement['locationCityName']}}</p>
+    <p>Year: {{responseAdvertisement.autoData['year']}}</p>
+    <p>Race: {{responseAdvertisement.autoData['race']}}</p>
+    <p>Fuel: {{responseAdvertisement.autoData['fuelName']}}</p>
+    <p>GearBox: {{responseAdvertisement.autoData['gearboxName']}}</p>
+</div>
